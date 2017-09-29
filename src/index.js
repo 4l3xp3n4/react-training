@@ -1,23 +1,27 @@
 import React , {Component} from 'react';
 import ReactDOM from 'react-dom';
-
+import Product from './components/product'
+import products from './components/seed';
 import ProductList from './components/product_list';
-
-
-const API_KEY = 'AIzaSyCBIEq-dEdsbgxzRO8uxyXSVfua2DpBMrQ';
-
 
 
 class App extends Component {
 	constructor(props){
 		super(props);
-			this.state = {videos : []};
+
 		}
 
 	render(){
+		const product = products[0];
 		return(
 			<div>
-				<ProductList/>
+				<ProductList id={product.id}
+					title={product.title}
+					description={product.description}
+					url={product.url}
+					votes={product.votes}
+					submitterAvatarUrl={product.submitterAvatarUrl}
+					productImageUrl={product.productImageUrl}/>
 			</div>
 		);
 	}
